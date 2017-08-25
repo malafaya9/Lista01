@@ -1,19 +1,23 @@
 #include<iostream>
 using namespace std;
 
-int main(){
-    unsigned long n1 = 1;
-    unsigned long n2 = 0;
-    unsigned long aux = 0;
-    int n;
-    cout << "Insira o numero de termos a serem exibidos: ";
-    cin >> n;
+int fibonacci(int n){
+    int n1 = 1;
+    int n2 = 0;
+    int aux = 0;
     while(n>0){
-        cout << n1 << " ";
         aux = n1 + n2;
         n2 = n1;
         n1 = aux;
         n--;
     }
+    return n2;
+}
+
+int main(){
+    int n;
+    cout << "Insira o numero do termo a ser exibido: ";
+    cin >> n;
+    cout << fibonacci(n);
     return 0;
 }
